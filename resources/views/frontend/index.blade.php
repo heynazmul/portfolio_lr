@@ -208,7 +208,7 @@ use App\Http\Controllers\HomeController;
                         </div>
                         <div class="text-white space-y-5">
                             @foreach($abouts as $about)
-                            <p class="text-5xl leading-[80px]">{{$about->title}}<span class="text-green">.</span></p> 
+                            <p class="text-5xl leading-[80px]">{{$about->title}} <span class="text-green">{{$about->focus_title}}</span></p> 
 
                             <p class="text-gray leading-8">{{$about->description}}</p>
                             @endforeach                        

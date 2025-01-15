@@ -39,7 +39,7 @@ class AboutController extends Controller
 
 public function edit($id) {
     $row = About::where('id', $id)->first();
-    return redirect()->route('about', ['row'=>$row]);
+    return redirect()->route('about.create', ['row'=>$row]);
 
 }    
 

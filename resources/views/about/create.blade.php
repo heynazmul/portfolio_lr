@@ -1,31 +1,36 @@
 <x-app-layout>
-    <div>
+    <div class="max-w-4xl mx-auto p-6">
         <form method="POST" action="{{ route('about.store') }}">
             @csrf
-            <div class="space-y-12">
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <label for="username" class="block text-sm/6 font-medium text-gray-900">Title</label>
-                    <div class="mt-2">
-                        <div class="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
-                        <input type="text" name="title" id="title" class="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6 w-full" placeholder="Write your title">
-                        </div>
-                    </div>
-                    <div class="col-span-full">
-                    <label for="focus_title" class="block text-sm/6 font-medium text-gray-900">Focus title</label>
-                    <div class="mt-2">
-                        <div class="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">    
-                        <input type="text" name="focus_title" id="focus_title" class="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6 w-full" placeholder="Write your description">
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-span-full">
-                    <label for="about" class="block text-sm/6 font-medium text-gray-900">About</label>
-                    <div class="mt-2">
-                        <textarea name="about" id="about" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
-                    </div>
-                    <p class="mt-3 text-sm/6 text-gray-600">Write a few sentences about yourself.</p>
-                    </div>
-                    <button class="bg-blue-500 hover:bg-green-500 font-bold py-2 px-4 rounded" type="submit" >submit</button>  
+            <div class="space-y-8 bg-white p-6 rounded-lg shadow-md">
+                <!-- Title Field -->
+                <div class="space-y-2">
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" name="title" id="title" placeholder="Write your title" 
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+
+                <!-- Focus Title Field -->
+                <div class="space-y-2">
+                    <label for="focus_title" class="block text-sm font-medium text-gray-700">Focus Title</label>
+                    <input type="text" name="focus_title" id="focus_title" placeholder="Write your focus title" 
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+
+                <!-- About Field -->
+                <div class="space-y-2">
+                    <label for="about" class="block text-sm font-medium text-gray-700">About</label>
+                    <textarea name="about" id="about" rows="4" placeholder="Write a few sentences about yourself" 
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
+                    <p class="text-sm text-gray-500">Write a brief introduction or description about yourself.</p>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-center">
+                    <button type="submit" 
+                        class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                        Submit
+                    </button>
                 </div>
             </div>
         </form>
