@@ -14,8 +14,10 @@
     <tr>
       <td class="border border-l-gray-400 text-center">{{$loop->iteration}}</td>
       <td class="border border-l-gray-400 text-center">{{$data->title}}</td>
+      <td class="border border-l-gray-400 text-center">{{$focus_title}}</td>
       <td class="border border-l-gray-400 text-center">{{$data->description}}</td>
       <td class="border border-l-gray-400 text-center">
+        <a href="{{route('about.edit', $data->id)}}">Edit</a>
         <a onclick="return confirm('Are you sure?')" href="{{route('about.delete', $data->id)}}">Delete</a>
       </td>
     </tr>

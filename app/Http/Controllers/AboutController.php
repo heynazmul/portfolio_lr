@@ -21,6 +21,7 @@ class AboutController extends Controller
     // 
        About::create([
            'title' => $request->title,
+           'focus_title' => $request->focus_title,
            'description' => $request->about
        ]);
        return redirect()->route('about');
@@ -36,7 +37,14 @@ class AboutController extends Controller
 }
 
 
-    
+public function edit($id) {
+    $row = About::where('id', $id)->first();
+    return redirect()->route('about', ['row'=>$row]);
+
+}    
+
+
+
 
 }
 

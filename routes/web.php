@@ -48,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/about/create', [Aboutcontroller::class, 'create'])->name('about.create');
     Route::post('/about/store', [Aboutcontroller::class, 'store'])->name('about.store');
     Route::get('/about/delete/{id}', [Aboutcontroller::class, 'destroy'])->name('about.delete');
+    Route::get('/about/edit/{id}', [Aboutcontroller::class, 'edit'])->name('about.edit');
 
     Route::get('specializations',[SpecializationsController::class,'index'])->name('specializations.index');
     Route::get('specializations/create', [SpecializationsController::class, 'create'])->name('specializations.create');
