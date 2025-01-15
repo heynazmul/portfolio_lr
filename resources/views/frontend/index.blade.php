@@ -1,6 +1,3 @@
-<?php
-use App\Http\Controllers\HomeController;
-?>
 <!doctype html>
 <html>
     <head>

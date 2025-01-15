@@ -14,7 +14,7 @@
                 <thead class="bg-gray-100">
                     <tr>
                         <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">SL</th>
-                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Title</th>
+                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600 ">Title</th>
                         <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Focus Title</th>
                         <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Description</th>
                         <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Actions</th>
@@ -26,10 +26,10 @@
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
                                 {{ $loop->iteration }}
                             </td>
-                            <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
+                            <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700 text-nowrap">
                                 {{ $data->title }}
                             </td>
-                            <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
+                            <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700 text-nowrap">
                                 {{ $data->focus_title }}
                             </td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">

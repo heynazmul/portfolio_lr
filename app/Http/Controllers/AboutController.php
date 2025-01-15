@@ -38,10 +38,19 @@ class AboutController extends Controller
 
 
 public function edit($id) {
-    $row = About::where('id', $id)->first();
-    return redirect()->route('about.create', ['row'=>$row]);
+    $about = About::findOrFail($id);
+    return view('about.edit', ['about'=>$about]);
+}
 
-}    
+public function update(Request $request, $id) {
+    $about = About::findOrFail($id);
+    $about->update([
+        'title' => $request->title,
+        'focus_title' => $request->focus_title,
+        'description' => $request->about
+    ]);
+    return redirect()->route('about');
+}
 
 
 
