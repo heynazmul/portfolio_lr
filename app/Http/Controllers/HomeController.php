@@ -20,10 +20,10 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         home::create([
-            'title_1' => $request->title,
-            'title_2' => $request->title,
+            'title_1' => $request->title_1,
+            'title_2' => $request->title_2,
             'focus_title' => $request->focus_title,
-            'description' => $request->home
+            'description' => $request->description
         ]);
         return redirect()->route('home');
     }
@@ -47,11 +47,10 @@ class HomeController extends Controller
     {
         $home = home::findOrFail($id);
         $home->update([
-            'title_1' => $request->title,
-            'title_2' => $request->title,
+            'title_1' => $request->title_1,
+            'title_2' => $request->title_2,
             'focus_title' => $request->focus_title,
-            'image' => $request->image,
-            'description' => $request->home
+            'description' => $request->description
         ]);
         return redirect()->route('home');
     }

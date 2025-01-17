@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto my-10">
         <!-- Create Button -->
         <div class="flex justify-end mb-6">
-            <a href="{{ route('home.create') }}" 
+            <a href="{{ route('resume.create') }}" 
                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Create
             </a>
@@ -14,38 +14,38 @@
                 <thead class="bg-gray-100">
                     <tr>
                         <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">SL</th>
-                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600  text-nowrap">Title -1</th>
-                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600  text-nowrap">Title -2</th>
-                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600 text-nowrap">Focus Title</th>
-                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Description</th>
+                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600  text-nowrap">Title</th>
+                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600 text-nowrap">Working Years</th>
+                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">position</th>
+                        <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Agency Name</th>
                         <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($homes as $data)
+                    @foreach($resumes as $data)
                         <tr class="hover:bg-gray-50">
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
                                 {{ $loop->iteration }}
                             </td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700 text-nowrap">
-                                {{ $data->title_1 }}
+                                {{ $data->title }}
                             </td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700 text-nowrap">
-                                {{ $data->title_2 }}
-                            </td>
-                            <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700 text-nowrap">
-                                {{ $data->focus_title }}
+                                {{ $data->working_years }}
                             </td>
                             <td class="border border-gray-300 px-4 py-2 text-start text-sm text-gray-700">
-                                {{ $data->description }}
+                                {{ $data->position }}
+                            </td>
+                            <td class="border border-gray-300 px-4 py-2 text-start text-sm text-gray-700">
+                                {{ $data->Agency_name }}
                             </td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
-                                <a href="{{ route('home.edit', $data->id) }}" 
+                                <a href="{{ route('resume.edit', $data->id) }}" 
                                    class="text-white p-2  bg-blue-600 rounded-md hover:hover-indigo-900 font-medium">
                                     Edit
                                 </a>
                                 <div class="mt-5">
-                                <a href="{{ route('home.delete', $data->id) }}" 
+                                <a href="{{ route('resume.delete', $data->id) }}" 
                                    onclick="return confirm('Are you sure?')" 
                                    class="bg-red-600 text-white p-2 mt-10 rounded-md hover:bg-red-800 font-medium">
                                     Delete

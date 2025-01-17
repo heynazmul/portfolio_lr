@@ -1,36 +1,34 @@
 <x-app-layout>
     <div class="max-w-4xl mx-auto p-6">
-        <form method="POST" action="{{ route('home.store') }}">
+        <form method="POST" action="{{ route('resume.store') }}">
             @csrf
             <div class="space-y-8 bg-white p-6 rounded-lg shadow-md">
                 <!-- Title Field-2 -->
                 <div class="space-y-2">
-                    <label for="title_1" class="block text-sm font-medium text-gray-700">Title-1</label>
-                    <input type="text" name="title_1" id="title_1" placeholder="Write your title" 
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                    <input type="text" name="title" id="title" placeholder="Write your title" 
                         class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
                 <!-- Title Field-2 -->
                 <div class="space-y-2">
-                    <label for="title_2" class="block text-sm font-medium text-gray-700">Title-2</label>
-                    <input type="text" name="title_2" id="title_2" placeholder="Write your title" 
+                    <label for="position" class="block text-sm font-medium text-gray-700">Position</label>
+                    <input type="text" name="position" id="position" placeholder="Write your title" 
                         class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
 
-                <!-- Focus Title Field -->
+                <!--Position Field -->
                 <div class="space-y-2">
-                    <label for="focus_title" class="block text-sm font-medium text-gray-700">Focus Title</label>
-                    <input type="text" name="focus_title" id="focus_title" placeholder="Write your focus title" 
+                    <label for="working_years" class="block text-sm font-medium text-gray-700">working years</label>
+                    <input type="text" name="working_years" id="working_years" placeholder="Write your focus title" 
                         class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
 
-                <!-- Description Field -->
+                <!--Agency name Field -->
                 <div class="space-y-2">
-                    <label for="description" class="block text-sm font-medium text-gray-700">About</label>
-                    <textarea name="description" id="description" rows="4" placeholder="Write a few sentences about yourself" 
-                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
-                    <p class="text-sm text-gray-500">Write a brief introduction or description about yourself.</p>
+                    <label for="agency_name" class="block text-sm font-medium text-gray-700">Agency name</label>
+                    <input type="text" name="agency_name" id="agency_name" placeholder="Write your Agency name" 
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
-
                 <!-- Submit Button -->
                 <div class="flex justify-center">
                     <button type="submit" 

@@ -169,8 +169,12 @@
                                 </svg>
                                 <span class="text-xs">INTRODUCE</span>
                             </div>
-                                <p class="text-6xl text-white leading-[80px] ">Say Hi from <span class="text-green">Nazmul</span>, Webflow Designer and Developer</p>
-                                <p class="text-gray leading-10">I design and code beautifully simple things and i love what i do.<br> Just simple like that!</p>
+                            <div>
+                                @foreach($homes as $data)
+                                <p class="text-6xl text-white leading-[80px] ">{{$data->title_1}} <span class="text-green">{{$data->focus_title}}</span> {{$data->title_2}}</p>
+                                <p class="text-gray leading-10">{{$data->description}}</p>
+                                @endforeach
+                            </div>
                                 <div class="flex justify-end">
                                     <a href="#" class="relative  rounded-full inline-flex border  border-gray h-44 w-44 p-4">
                                         <img h-full w-full class="h-full w-full animate-spin" src="{{asset('assets/round-text.png')}}" alt="round-text" style="animation-duration: 10s;">

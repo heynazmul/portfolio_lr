@@ -5,14 +5,14 @@
             <div class="space-y-8 bg-white p-6 rounded-lg shadow-md">
                 <!-- Title Field -->
                 <div class="space-y-2">
-                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                    <input type="text" name="title" value="{{ $home->title }}" id="title" placeholder="Write your title" 
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title-1</label>
+                    <input type="text" name="title" value="{{ $home->title_1 }}" id="title" placeholder="Write your title" 
                         class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
                 <!-- Title Field -->
                 <div class="space-y-2">
-                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                    <input type="text" name="title" value="{{ $home->title }}" id="title" placeholder="Write your title" 
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title-2</label>
+                    <input type="text" name="title" value="{{ $home->title_2 }}" id="title" placeholder="Write your title" 
                         class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
 
