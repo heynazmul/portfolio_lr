@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto my-10">
         <!-- Create Button -->
         <div class="flex justify-end mb-6">
-            <a href="{{ route('about.create') }}" 
+            <a href="{{ route('home.create') }}" 
                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Create
             </a>
@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($rows as $data)
+                    @foreach($homes as $data)
                         <tr class="hover:bg-gray-50">
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
                                 {{ $loop->iteration }}
@@ -36,12 +36,12 @@
                                 {{ $data->description }}
                             </td>
                             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
-                                <a href="{{ route('about.edit', $data->id) }}" 
+                                <a href="{{ route('home.edit', $data->id) }}" 
                                    class="text-white p-2  bg-blue-600 rounded-md hover:hover-indigo-900 font-medium">
                                     Edit
                                 </a>
                                 <div class="mt-5">
-                                <a href="{{ route('about.delete', $data->id) }}" 
+                                <a href="{{ route('home.delete', $data->id) }}" 
                                    onclick="return confirm('Are you sure?')" 
                                    class="bg-red-600 text-white p-2 mt-10 rounded-md hover:bg-red-800 font-medium">
                                     Delete

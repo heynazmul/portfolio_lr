@@ -4,8 +4,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShipmantController;
 use App\Http\Controllers\Aboutcontroller;
 use App\Http\Controllers\SpecializationsController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Models\About;
+use App\Models\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('frontend.index', [
         'abouts' => About::all(),
+        'homes' => Home::all()
     ]);
 });
 
@@ -51,10 +54,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/about/edit/{id}', [Aboutcontroller::class, 'edit'])->name('about.edit');
     Route::post('/about/update/{id}', [Aboutcontroller::class, 'update'])->name('about.update');
 
-    Route::get('specializations',[SpecializationsController::class,'index'])->name('specializations.index');
-    Route::get('specializations/create', [SpecializationsController::class, 'create'])->name('specializations.create');
-    Route::post('specializations/store', [SpecializationsController::class, 'store'])->name('specializations.store');
-    Route::get('specializations/delete/{id}', [SpecializationsController::class, 'destroy'])->name('specializations.delete');
+    Route::get('/home',[HomeController::class,'index'])->name('home');
+    Route::get('/home/create',[HomeController::class,'create'])->name('home.create');
+    Route::post('/home/store',[HomeController::class,'store'])->name('home.store');
+    Route::get('/home/delete/{id}',[HomeController::class,'destroy'])->name('home.delete');
+    Route::get('/home/edit/{id}',[HomeController::class,'edit'])->name('home.edit');
+    Route::post('/home/update/{id}',[HomeController::class,'update'])->name('home.update');
 
 });
 
