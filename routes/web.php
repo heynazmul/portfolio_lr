@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\ShipmantController;
 use App\Http\Controllers\Aboutcontroller;
 use App\Http\Controllers\SpecializationsController;
@@ -26,13 +27,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/', function () {
-    return view('frontend.index', [
-        'abouts' => About::all(),
-        'homes' => Home::all(),
-        'resumes' => Resume::all(),
-    ]);
-});
+Route::get('/',[FrontEndController::class,'home']);
 
 
    
@@ -61,7 +56,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/home/store',[HomeController::class,'store'])->name('home.store');
     Route::get('/home/delete/{id}',[HomeController::class,'destroy'])->name('home.delete');
     Route::get('/home/edit/{id}',[HomeController::class,'edit'])->name('home.edit');
-    Route::post('/home/update/{id}',[HomeController::class,'update'])->name('home.update');
+    Route::put('/home/update/{id}',[HomeController::class,'update'])->name('home.update');
+    Route::get('/home/status/{id}',[HomeController::class,'status'])->name('home.status');
 
     Route::get('/specializations', [SpecializationsController::class, 'index'])->name('specializations');
     Route::get('/specializations/create', [SpecializationsController::class, 'create'])->name('specializations.create');

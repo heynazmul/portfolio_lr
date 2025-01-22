@@ -170,10 +170,13 @@
                                 <span class="text-xs">INTRODUCE</span>
                             </div>
                             <div>
-                                @foreach($homes as $data)
-                                <p class="text-6xl text-white leading-[80px] ">{{$data->title_1}} <span class="text-green">{{$data->focus_title}}</span> {{$data->title_2}}</p>
-                                <p class="text-gray leading-10">{{$data->description}}</p>
-                                @endforeach
+                                @forelse($homes as $data)
+                                    <p class="text-6xl text-white leading-[80px] ">{{$data->title_1}} <span class="text-green">{{$data->focus_title}}</span> {{$data->title_2}}</p>
+                                    <p class="text-gray leading-10">{{$data->description}}</p>
+                                @empty
+                                    <p class="text-6xl text-white leading-[80px] ">Hi From <span class="text-green">.....</span> laravel Developer</p>
+                                    <p class="text-gray leading-10">...............................................</p>
+                                @endforelse
                             </div>
                                 <div class="flex justify-end">
                                     <a href="#" class="relative  rounded-full inline-flex border  border-gray h-44 w-44 p-4">

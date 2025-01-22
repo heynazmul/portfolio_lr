@@ -6,22 +6,22 @@
                 <!-- Title Field -->
                 <div class="space-y-2">
                     <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                    <input type="text" name="title" value="{{ $about->title }}" id="title" placeholder="Write your title" 
+                    <input type="text" name="title" value="{{old ('title') ?? $about->title}}" id="title" placeholder="Write your title" 
                         class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
 
                 <!-- Focus Title Field -->
                 <div class="space-y-2">
                     <label for="focus_title" class="block text-sm font-medium text-gray-700">Focus Title</label>
-                    <input type="text" name="focus_title" id="focus_title" value="{{ $about->focus_title }}" placeholder="Write your focus title" 
+                    <input type="text" name="focus_title" id="focus_title" value="{{old('focus_title') ?? $about->focus_title}}" placeholder="Write your focus title" 
                         class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                 </div>
 
                 <!-- About Field -->
                 <div class="space-y-2">
-                    <label for="about" class="block text-sm font-medium text-gray-700">About</label>
-                    <textarea name="about"  id="about" rows="4" placeholder="Write a few sentences about yourself" 
-                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ old('description', $about->description) }}</textarea>
+                    <label for="description" class="block text-sm font-medium text-gray-700">About</label>
+                    <textarea name="description"  id="description" rows="4" placeholder="Write a few sentences about yourself" 
+                        class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{old('description')?? $about->description ?? '' }}</textarea>
                     <p class="text-sm text-gray-500">Write a brief introduction or description about yourself.</p>
                 </div>
 
