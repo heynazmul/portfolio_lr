@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('focus_title')->nullable();
+            $table->string('status')->default(0)->nullable();
             $table->timestamps();
         });
     }

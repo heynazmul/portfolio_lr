@@ -27,12 +27,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/',[FrontEndController::class,'home']);
+Route::get('/', [FrontEndController::class, 'home']);
 
 
-   
 
-   
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -50,14 +50,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/about/delete/{id}', [Aboutcontroller::class, 'destroy'])->name('about.delete');
     Route::get('/about/edit/{id}', [Aboutcontroller::class, 'edit'])->name('about.edit');
     Route::post('/about/update/{id}', [Aboutcontroller::class, 'update'])->name('about.update');
+    Route::get('/about/status/{id}', [Aboutcontroller::class, 'status'])->name('about.status');
 
-    Route::get('/home',[HomeController::class,'index'])->name('home');
-    Route::get('/home/create',[HomeController::class,'create'])->name('home.create');
-    Route::post('/home/store',[HomeController::class,'store'])->name('home.store');
-    Route::get('/home/delete/{id}',[HomeController::class,'destroy'])->name('home.delete');
-    Route::get('/home/edit/{id}',[HomeController::class,'edit'])->name('home.edit');
-    Route::put('/home/update/{id}',[HomeController::class,'update'])->name('home.update');
-    Route::get('/home/status/{id}',[HomeController::class,'status'])->name('home.status');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home/create', [HomeController::class, 'create'])->name('home.create');
+    Route::post('/home/store', [HomeController::class, 'store'])->name('home.store');
+    Route::get('/home/delete/{id}', [HomeController::class, 'destroy'])->name('home.delete');
+    Route::get('/home/edit/{id}', [HomeController::class, 'edit'])->name('home.edit');
+    Route::put('/home/update/{id}', [HomeController::class, 'update'])->name('home.update');
+    Route::get('/home/status/{id}', [HomeController::class, 'status'])->name('home.status');
 
     Route::get('/specializations', [SpecializationsController::class, 'index'])->name('specializations');
     Route::get('/specializations/create', [SpecializationsController::class, 'create'])->name('specializations.create');
@@ -73,8 +74,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/resume/delete/{id}', [ResumeController::class, 'destroy'])->name('resume.delete');
     Route::get('/resume/edit/{id}', [ResumeController::class, 'edit'])->name('resume.edit');
     Route::post('/resume/update/{id}', [ResumeController::class, 'update'])->name('resume.update');
-
-
+    Route::get('/resume/status/{id}', [ResumeController::class, 'status'])->name('resume.status');
 });
 
 require __DIR__ . '/auth.php';

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('working_years')->nullable();
             $table->string('position')->nullable();
             $table->string('Agency_name')->nullable();
+            $table->string('status')->default(0)->nullable();
             $table->timestamps();
         });
     }
