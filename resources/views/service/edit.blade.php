@@ -1,6 +1,6 @@
 <x-app-layout>
  <div class="max-w-4xl mx-auto p-8">
-  <form method="POST" action="{{ route('services.update', $service->id) }}" enctype="multipart/form-data"
+  <form method="POST" action="{{ route('service.update', $service->id) }}"
    class="space-y-8 bg-white shadow-md rounded-lg p-6">
    @csrf
    <h2 class="text-2xl font-semibold text-gray-700">Edit Service </h2>
@@ -17,11 +17,11 @@
    </div>
    <!-- Sub Title Input -->
    <div>
-    <label for="sub_title" class="block text-sm font-medium text-gray-700">Sub Title</label>
-    <input type="text" name="sub_title" id="sub_title" value="{{ old('sub_title', $service->sub_title) }}"
+    <label for="subtitle" class="block text-sm font-medium text-gray-700">Sub Title</label>
+    <input type="text" name="subtitle" id="subtitle" value="{{ old('subtitle', $service->subtitle) }}"
      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
      placeholder="Write your sub title">
-    @error('sub_title')
+    @error('subtitle')
     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
     @enderror
    </div>
@@ -60,14 +60,14 @@
    </div>
 
    <!-- Icon Input -->
-   <div>
+   {{-- <div>
     <label for="icon" class="block text-sm font-medium text-gray-700">Icon</label>
     <input type="file" name="icon" id="icon" value="{{ old('icon', $service->icon) }}"
      class="mt-1 block w-full text-gray-700 rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
     @error('icon')
     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
     @enderror
-   </div>
+   </div> --}}
 
    <!-- Submit Button -->
    <div class="flex justify-center">
