@@ -23,12 +23,12 @@ class ResumeController extends Controller
     {
 
         $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'nullable|string|max:255',
             'working_years' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'Agency_name' => 'required|string|max:255'
         ], [
-            'title.required' => ' required.',
+            'title.required' => ' ',
             'working_years.required' => ' required.',
             'position.required' => ' required.',
             'Agency_name.required' => ' required.',
@@ -62,12 +62,12 @@ class ResumeController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
+            'title' => 'nullable|string|max:255',
             'working_years' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'Agency_name' => 'required|string|max:255'
         ], [
-            'title.required' => ' required.',
+            'title.required' => ' .',
             'working_years.required' => ' required.',
             'position.required' => ' required.',
             'Agency_name.required' => ' required.',

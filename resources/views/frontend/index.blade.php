@@ -311,7 +311,6 @@
                 <!--RESUME-->
                 <section class="py-16 space-y-10 px-10">
                     <div class="py-16 space-y-10">
-                        @forelse($resumes as $data)
                         <div
                             class="border border-gray px-6 hover:border-green duration-300 py-3 rounded-full inline-flex gap-2 text-white items-center">
                             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -327,33 +326,33 @@
                             </svg>
                             <span class="text-xs">RESUME</span>
                         </div>
-                        <p class="text-white text-5xl text-green">{{$data->title}}</p>
                         <div>
-                            <div class="relative">
-                                <div
-                                    class="before:absolute before:content-[''] before:h-full before:w-[1px] before:bg-gray  group space-y-10">
-                                    <span
-                                        class="after:absolute after:after:-[''] after:p-[6px] after:-left-[6px] after:bg-gray after:rounded-full after:group-hover:bg-green"></span>
-                                    <div class="pl-16 space-y-5">
-                                        <P class="group-hover:text-green text-gray leading-[0.75]">
-                                            {{$data->working_years}}</P>
-                                        <div>
-                                            <P class="text-2xl text-white">{{$data->position}}</P>
-                                            <p class="text-gray">{{$data->Agency_name}}</p>
+                            @forelse($resumes as $data)
+                            @if($data->title)
+                            <p class="text-white text-5xl text-green">{{$data->title}}</p>
+                            @endif
+                            <div>
+                                <div class="relative">
+                                    <div
+                                        class="before:absolute before:content-[''] before:h-full before:w-[1px] before:bg-gray  group space-y-10">
+                                        <span
+                                            class="after:absolute after:after:-[''] after:p-[6px] after:-left-[6px] after:bg-gray after:rounded-full after:group-hover:bg-green"></span>
+                                        <div class="pl-16 space-y-5">
+                                            <P class="group-hover:text-green text-gray leading-[0.75]">
+                                                {{$data->working_years}}</P>
+                                            <div>
+                                                <P class="text-2xl text-white">{{$data->position}}</P>
+                                                <p class="text-gray pb-4">{{$data->Agency_name}}</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <P class="text-2xl text-white">{{$data->position}}</P>
-                                            <p class="text-gray">{{$data->Agency_name}}</p>
-                                        </div>
-
                                     </div>
                                 </div>
                             </div>
+                            @empty
+                            <p class="text-white text-5xl text-green">No Resume Data</p>
+                            @endforelse
                         </div>
                     </div>
-                    @empty
-                    <p class="text-5xl">No Resume Data</p>
-                    @endforelse
                 </section>
                 <!--SERVICES-->
                 <section class="py-16 px-10">
@@ -367,8 +366,8 @@
                             </svg>
                             <span class="text-xs">SERVICES</span>
                         </div>
-                        <p class="text-white text-5xl">My <span class="text-green">Specializations</span></p>
-                        <div class=" grid lg:grid-cols-1  md:grid-cols-3">
+                        <p class="text-white text-5xl">My <span class="text-green">Services</span></p>
+                        <div class=" grid lg:grid-cols-1 gap-y-10  md:grid-cols-3">
                             <div class="group">
                                 <div
                                     class="w-full border border-white group-hover:border-green duration-300 p-14 rounded-2xl space-y-6">
@@ -393,45 +392,6 @@
                                                 stroke="#28C949" stroke-width="1.5" />
                                         </svg>
 
-                                    </div>
-                                    <p class="group-hover:underline text-white">126 PROJECTS</p>
-                                </div>
-                            </div>
-                            <div class="group">
-                                <div
-                                    class="w-full border border-white group-hover:border-green duration-300 p-14 rounded-2xl space-y-6">
-                                    <div class="flex justify-between">
-                                        <div class="space-y-3">
-                                            <p class="text-2xl text-white">Development</p>
-                                            <p class="text-gray">I build website go live with Framer, Webflow or
-                                                WordPress</p>
-                                        </div>
-                                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17 8L20 11.5L17 15" stroke="#28C949" stroke-width="2" />
-                                            <path d="M7 8L4 11.5L7 15" stroke="#28C949" stroke-width="2" />
-                                            <path d="M14.5 4L9.5 20" stroke="#28C949" stroke-width="2"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <p class="group-hover:underline text-white">126 PROJECTS</p>
-                                </div>
-                            </div>
-                            <div class="group">
-                                <div
-                                    class="w-full border border-white group-hover:border-green duration-300 p-14 rounded-2xl space-y-6">
-                                    <div class="flex justify-between">
-                                        <div class="space-y-3">
-                                            <p class="text-2xl text-white">SEO/Marketing</p>
-                                            <p class="text-gray">Increase the traffic for your website with SEO
-                                                optimized</p>
-                                        </div>
-                                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                            class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke="#28C949" stroke-linejoin="round"
-                                                d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                                        </svg>
                                     </div>
                                     <p class="group-hover:underline text-white">126 PROJECTS</p>
                                 </div>

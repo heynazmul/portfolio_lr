@@ -7,10 +7,12 @@ use App\Http\Controllers\Aboutcontroller;
 use App\Http\Controllers\SpecializationsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Models\About;
 use App\Models\Home;
 use App\Models\Resume;
+use App\Models\Service;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +46,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/shipment', [ShipmantController::class, 'index'])->name('shipping');
 
+    //about
+
     Route::get('/about', [Aboutcontroller::class, 'index'])->name('about');
     Route::get('/about/create', [Aboutcontroller::class, 'create'])->name('about.create');
     Route::post('/about/store', [Aboutcontroller::class, 'store'])->name('about.store');
@@ -52,6 +56,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/about/update/{id}', [Aboutcontroller::class, 'update'])->name('about.update');
     Route::get('/about/status/{id}', [Aboutcontroller::class, 'status'])->name('about.status');
 
+
+    //home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/home/create', [HomeController::class, 'create'])->name('home.create');
     Route::post('/home/store', [HomeController::class, 'store'])->name('home.store');
@@ -60,14 +66,8 @@ Route::middleware('auth')->group(function () {
     Route::put('/home/update/{id}', [HomeController::class, 'update'])->name('home.update');
     Route::get('/home/status/{id}', [HomeController::class, 'status'])->name('home.status');
 
-    Route::get('/specializations', [SpecializationsController::class, 'index'])->name('specializations');
-    Route::get('/specializations/create', [SpecializationsController::class, 'create'])->name('specializations.create');
-    Route::post('/specializations/store', [SpecializationsController::class, 'store'])->name('specializations.store');
-    Route::get('/specializations/delete/{id}', [SpecializationsController::class, 'destroy'])->name('specializations.delete');
-    Route::get('/specializations/edit/{id}', [SpecializationsController::class, 'edit'])->name('specializations.edit');
-    Route::post('/specializations/update/{id}', [SpecializationsController::class, 'update'])->name('specializations.update');
 
-
+    //resume
     Route::get('/resume', [ResumeController::class, 'index'])->name('resume');
     Route::get('/resume/create', [ResumeController::class, 'create'])->name('resume.create');
     Route::post('/resume/store', [ResumeController::class, 'store'])->name('resume.store');
@@ -75,6 +75,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/resume/edit/{id}', [ResumeController::class, 'edit'])->name('resume.edit');
     Route::post('/resume/update/{id}', [ResumeController::class, 'update'])->name('resume.update');
     Route::get('/resume/status/{id}', [ResumeController::class, 'status'])->name('resume.status');
+
+    //service
+    Route::get('/service', [ServiceController::class, 'index'])->name('service');
+    Route::get('/service/create', [ServiceController::class, 'create'])->name('service.create');
+    Route::post('/service/store', [ServiceController::class, 'store'])->name('service.store');
+    Route::get('/service/delete/{id}', [ServiceController::class, 'destroy'])->name('service.delete');
+    Route::get('/service/edit/{id}', [ServiceController::class, 'edit'])->name('service.edit');
+    Route::post('/service/update/{id}', [ServiceController::class, 'update'])->name('service.update');
+    Route::get('/service/status/{id}', [ServiceController::class, 'status'])->name('service.status');
 });
 
 require __DIR__ . '/auth.php';

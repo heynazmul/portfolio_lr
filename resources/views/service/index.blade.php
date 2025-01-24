@@ -2,7 +2,8 @@
   <div class="mx-auto my-10 max-w-7xl">
     <!-- Create Button -->
     <div class="mb-6 flex justify-end">
-      <a href="{{ route('home.create') }}" class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+      <a href="{{ route('service.create') }}"
+        class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
         Create
       </a>
     </div>
@@ -24,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($homes as $data)
+          @foreach ($services as $data)
           <tr class="hover:bg-gray-50">
             <td class="border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
               {{ $loop->iteration }}
