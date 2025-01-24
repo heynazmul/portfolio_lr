@@ -7,7 +7,22 @@
         Create
       </a>
     </div>
-
+    <!-- Title Input -->
+    <form action="{{ route('service.titleStore') }}" method="post">
+      @csrf
+      <div class="flex items-center space-x-4 mb-10">
+        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+        <input type="text" name="title" id="title" value="{{ old('title') ?? $serviceTitle->title }}"
+          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          placeholder="Write your title">
+        @error('title')
+        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
+        <!-- Save Button -->
+        <button class="mt-6 {{$serviceTitle ? 'bg-orange-100' : 'bg-blue-500'}}  text-white font-bold py-2 px-4 rounded"
+          type="submit">{{$serviceTitle ? 'Update': 'Save'}}</button>
+      </div>
+    </form>
     <!-- Table -->
     <div class="overflow-x-auto rounded-lg bg-white shadow-md">
       <table class="w-full table-auto border-collapse border border-gray-200">

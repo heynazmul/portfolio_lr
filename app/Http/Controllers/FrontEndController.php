@@ -16,11 +16,13 @@ class FrontEndController extends Controller
         $abouts = About::where('status', 1)->get();
         $resumes = Resume::where('status', 1)->get();
         $services = Service::where('status', 1)->get();
+        $serviceTitle = Service::where('type', 'title')->first();
         return view('frontend.index', [
             'homes' => $homes,
             'abouts' => $abouts,
             'resumes' => $resumes,
-            'services' => $services
+            'services' => $services,
+            'serviceTitle' => $serviceTitle
         ]);
     }
 }

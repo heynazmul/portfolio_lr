@@ -84,6 +84,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/service/edit/{id}', [ServiceController::class, 'edit'])->name('service.edit');
     Route::post('/service/update/{id}', [ServiceController::class, 'update'])->name('service.update');
     Route::get('/service/status/{id}', [ServiceController::class, 'status'])->name('service.status');
+
+
+    Route::post('/service/titleStore', [ServiceController::class, 'titleStore'])->name('service.titleStore');
 });
 
 require __DIR__ . '/auth.php';

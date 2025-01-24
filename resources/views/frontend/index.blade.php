@@ -367,15 +367,16 @@
                             <span class="text-xs">SERVICES</span>
                         </div>
                         <div class="space-y-10">
+                            <p class="text-white text-5xl">My <span class="text-green">{{$serviceTitle->title}}</span>
+                            </p>
                             @forelse($services as $data)
-                            <p class="text-white text-5xl">My <span class="text-green">{{ $data->title }}</span></p>
                             <div class=" grid lg:grid-cols-1 gap-y-10  md:grid-cols-3">
                                 <div class="group">
                                     <div
                                         class="w-full border border-white group-hover:border-green duration-300 p-14 rounded-2xl space-y-6">
                                         <div class="flex justify-between">
                                             <div class="space-y-3">
-                                                <p class="text-2xl text-white">{{$data->subtitle}}</p>
+                                                <p class="text-2xl text-white">{{$data->title}}</p>
                                                 <p class="text-gray">{{$data->description}}</p>
                                             </div>
                                             <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none"

@@ -11,7 +11,8 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view('service.index', compact('services'));
+        $serviceTitle = Service::where('type', 'title')->first();
+        return view('service.index', compact('services', 'serviceTitle'));
     }
 
     public function create()
@@ -23,7 +24,6 @@ class ServiceController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
             'description' => 'required',
             'url_title' => 'required|string|max:255',
             'url' => 'required|url|max:255',
@@ -31,7 +31,6 @@ class ServiceController extends Controller
 
         Service::create([
             'title' => $request->title,
-            'subtitle' => $request->subtitle,
             'description' => $request->description,
             'url_title' => $request->url_title,
             'url' => $request->url,
@@ -50,7 +49,6 @@ class ServiceController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'subtitle' => 'required|string|max:255',
             'description' => 'required',
             'url_title' => 'required|string|max:255',
             'url' => 'required|url|max:255',
@@ -59,7 +57,6 @@ class ServiceController extends Controller
         $service = Service::findOrFail($id);
         $service->update([
             'title' => $request->title,
-            'subtitle' => $request->subtitle,
             'description' => $request->description,
             'url_title' => $request->url_title,
             'url' => $request->url,
@@ -82,6 +79,25 @@ class ServiceController extends Controller
             $checkData->update(['status' => 1]);
         } else {
             $checkData->update(['status' => 0]);
+        }
+        return redirect()->route('service');
+    }
+
+    public function titleStore(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+        ]);
+        $serviceTitle = Service::where('type', 'title')->first();
+        if ($serviceTitle) {
+            $serviceTitle->update([
+                'title' => $request->title,
+            ]);
+        } else {
+            Service::create([
+                'title' => $request->title,
+                'type' => 'title',
+            ]);
         }
         return redirect()->route('service');
     }

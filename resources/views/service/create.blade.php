@@ -15,17 +15,6 @@
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-            <!-- Sub Title Input -->
-            <div>
-                <label for="subtitle" class="block text-sm font-medium text-gray-700">Sub Title</label>
-                <input type="text" name="subtitle" id="subtitle" value="{{ old('subtitle') }}"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    placeholder="Write your sub title">
-                @error('subtitle')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
             <!-- Description Input -->
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
@@ -51,7 +40,7 @@
             <!-- URL Input -->
             <div>
                 <label for="url" class="block text-sm font-medium text-gray-700">URL</label>
-                <input type="text" name="url" id="url" value="{{ old('url') }}"
+                <input type="url" name="url" id="url" value="{{ old('url') }}"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                     placeholder="Write your URL">
                 @error('url')
