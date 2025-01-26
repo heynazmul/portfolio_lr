@@ -32,9 +32,6 @@
             <th class="text-nowrap border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">Title
             </th>
             <th class="text-nowrap border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">
-              Subtitle
-            </th>
-            <th class="text-nowrap border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">
               url title</th>
             <th class="text-nowrap border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-600">
               url subtitle</th>
@@ -53,13 +50,10 @@
               {{ $data->title }}
             </td>
             <td class="text-nowrap border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
-              {{ $data->subtitle }}
+              {{ $data->url_title }}
             </td>
             <td class="text-nowrap border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
               {{ $data->url }}
-            </td>
-            <td class="text-nowrap border border-gray-300 px-4 py-2 text-center text-sm text-gray-700">
-              {{ $data->url_title }}
             </td>
             <td class="border border-gray-300 px-4 py-2 text-start text-sm text-gray-700">
               {{ $data->description }}

@@ -10,7 +10,7 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::all();
+        $services = Service::where('type', 'details')->get();
         $serviceTitle = Service::where('type', 'title')->first();
         return view('service.index', compact('services', 'serviceTitle'));
     }

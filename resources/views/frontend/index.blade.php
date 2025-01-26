@@ -367,7 +367,9 @@
                             <span class="text-xs">SERVICES</span>
                         </div>
                         <div class="space-y-10">
-                            <p class="text-white text-5xl">My <span class="text-green">{{$serviceTitle->title}}</span>
+                            <p class="text-white text-5xl">{{ explode(' ', $serviceTitle->title
+                                )[0] }} <span class="text-green">{{ implode(' ', array_slice(explode(' ',
+                                    $serviceTitle->title ?? ''), 1)) }}</span>
                             </p>
                             @forelse($services as $data)
                             <div class=" grid lg:grid-cols-1 gap-y-10  md:grid-cols-3">
@@ -400,7 +402,6 @@
                                 </div>
                             </div>
                             @empty
-                            <p class="text-white text-5xl">My <span class="text-green">Services</span></p>
                             <div class=" grid lg:grid-cols-1 gap-y-10  md:grid-cols-3">
                                 <div class="group">
                                     <div

@@ -15,8 +15,8 @@ class FrontEndController extends Controller
         $homes = Home::where('status', 1)->get();
         $abouts = About::where('status', 1)->get();
         $resumes = Resume::where('status', 1)->get();
-        $services = Service::where('status', 1)->get();
-        $serviceTitle = Service::where('type', 'title')->first();
+        $services = Service::where('status', 1)->where('type', 'details')->get();
+        $serviceTitle = Service::where('type', 'title')->where('status', 1)->first();
         return view('frontend.index', [
             'homes' => $homes,
             'abouts' => $abouts,
